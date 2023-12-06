@@ -15,18 +15,28 @@ namespace StephanieL_Prog2_Final
         //Constructors 
         public Category(string name)
         {
-            _name = name;
+            Name = name;
 
             _todoItemsInCategory = new List<Item>();
 
         }
 
+        public Category(string name, List<Item> todoItemsInCategory)
+        {
+            Name = name;
+            _todoItemsInCategory = todoItemsInCategory;
+        }
+
+        //Properties
+        public string Name { get => _name; set => _name = value; }
         public List<Item> TodoItemsInCategory { get => _todoItemsInCategory; set => _todoItemsInCategory = value; }
 
         public override string ToString()
         {
-            return _name;
+            return Name;
         }
+
+
 
     }
 }

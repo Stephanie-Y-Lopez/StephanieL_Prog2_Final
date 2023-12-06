@@ -9,50 +9,48 @@ namespace StephanieL_Prog2_Final
     public class Item
     {
         //Fields
-        string _Name; //For Name Category
-        bool _HighImportance; //If or if it is not of high important
-        bool _TimeSensitive; //If or if it is not time sensitive
-        bool _Completed; //If the task has been completed
-        string _Description; //Description of the task
+        string _name; //For Name Category
+        bool _highImportance; //If or if it is not of high important
+        bool _timeSensitive; //If or if it is not time sensitive
+        bool _completed; //If the task has been completed
+        string _description; //Description of the task
 
-        //Constructor
         public Item(string name, bool highImportance, bool timeSensitive, bool completed, string description)
         {
-            _Name = name;
-            _HighImportance = highImportance;
-            _TimeSensitive = timeSensitive;
-            _Completed = completed;
-            _Description = description;
-
+            _name = name;
+            _highImportance = highImportance;
+            _timeSensitive = timeSensitive;
+            _completed = completed;
+            _description = description;
         }
 
         public Item(string name)
         {
-            _Name = name;
+            _name = name;
         }
 
-        //Properties
-        public string Name
+        public string Name { get => _name; set => _name = value; }
+        public bool HighImportance { get => _highImportance; set => _highImportance = value; }
+        public bool TimeSensitive { get => _timeSensitive; set => _timeSensitive = value; }
+        public bool Completed { get => _completed; set => _completed = value; }
+        public string Description { get => _description; set => _description = value; }
+
+
+
+        //Method
+        public string DisplayInformation()
         {
-            get
-            {
-                return _Name;
-            }
-            set
-            {
-                _Name = value;
-            }
-        }
-        public string Description
-        {
-            get
-            {
-                return _Description;
-            }
-            set
-            {
-                _Description = value;
-            }
+            string fullInformation = "";
+            fullInformation += $"Task Name: {_name}\n";
+            fullInformation += $"Task Of High Importance: {_highImportance}\n";
+            fullInformation += $"Task Is Time Sensitive: {_timeSensitive}\n";
+            fullInformation += $"Task Completion: {_completed}\n";
+            fullInformation += $"Task Description: {_description}\n";
+
+            return fullInformation;
+
+
+
         }
     }
 }
