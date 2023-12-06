@@ -17,7 +17,8 @@
             Width="173"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            FontFamily="Cambria" />
+            FontFamily="Cambria"
+            SelectionChanged="CMBcategories_SelectionChanged" />
         <Label
             Content="New Category:"
             Canvas.Left="210"

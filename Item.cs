@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StephanieL_Prog2_Final
 {
-    public class Today
+    public class Item
     {
         //Fields
         string _Name; //For Name Category
@@ -16,13 +16,19 @@ namespace StephanieL_Prog2_Final
         string _Description; //Description of the task
 
         //Constructor
-        public Today(string name, bool highImportance, bool timeSensitive, bool completed, string description)
+        public Item(string name, bool highImportance, bool timeSensitive, bool completed, string description)
         {
             _Name = name;
             _HighImportance = highImportance;
             _TimeSensitive = timeSensitive;
             _Completed = completed;
             _Description = description;
+
+        }
+
+        public Item(string name)
+        {
+            _Name = name;
         }
 
         //Properties

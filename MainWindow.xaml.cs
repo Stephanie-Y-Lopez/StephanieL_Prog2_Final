@@ -26,22 +26,30 @@ namespace StephanieL_Prog2_Final
 
     public partial class MainWindow : Window
     {
-        List<string> Task;
+        List<Category> Task;
         //For ComboBox List
 
         public MainWindow()
         {
             InitializeComponent();
 
-            Task = new List<string>
+            Task = new List<Category>
             {
-             "Today",
-             "Shopping",
-             "Travel"
-             // List for ComboBox
+            new Category("Item"),
+            new Category("Category")
             };
-            
+
+            Task[0].TodoItemsInCategory.Add(new Item("This is an item"));
+            Task[1].TodoItemsInCategory.Add(new Item("This is the second item"));
+
             CMBcategories.ItemsSource = Task;
+        }
+
+        private void CMBcategories_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int index = CMBcategories.SelectedIndex;
+            Category selected = Task[index];
+            LVtask.ItemsSource = selected.TodoItemsInCategory;
         }
     }
 }
