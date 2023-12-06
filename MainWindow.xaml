@@ -1,0 +1,214 @@
+﻿<Window
+    x:Class="StephanieL_Prog2_Final.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:StephanieL_Prog2_Final"
+    mc:Ignorable="d"
+    Title="MainWindow"
+    Height="450"
+    Width="800">
+    <Canvas>
+        <ComboBox
+            x:Name="CMBcategories"
+            Canvas.Left="10"
+            Canvas.Top="31"
+            Width="173"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            FontFamily="Cambria" />
+        <Label
+            Content="New Category:"
+            Canvas.Left="210"
+            HorizontalAlignment="Left"
+            Canvas.Top="5"
+            VerticalAlignment="Top"
+            FontFamily="Cambria"
+            FontSize="14" />
+        <Label
+            Content="Description"
+            Canvas.Left="71"
+            Canvas.Top="322"
+            RenderTransformOrigin="0.62,-0.194"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontFamily="Cambria"
+            FontSize="14"
+            Height="26" />
+        <Label
+            Content="Task"
+            Canvas.Left="8"
+            Canvas.Top="296"
+            RenderTransformOrigin="-1.542,-1.175"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            FontFamily="Cambria"
+            FontSize="14"
+            Height="29" />
+        <TextBox
+            x:Name="TXTBnewcategory"
+            Canvas.Left="210"
+            TextWrapping="Wrap"
+            Text=""
+            Canvas.Top="31"
+            Width="140"
+            HorizontalAlignment="Left"
+            Height="22"
+            VerticalAlignment="Center"
+            FontFamily="Cambria" />
+        <TextBox
+            x:Name="TXTBtask"
+            Canvas.Left="45"
+            TextWrapping="Wrap"
+            Text=""
+            Canvas.Top="299"
+            Width="155"
+            RenderTransformOrigin="0.529,0.93"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Height="20"
+            FontFamily="Cambria" />
+        <TextBox
+            x:Name="TXTBdescription"
+            Canvas.Left="8"
+            TextWrapping="Wrap"
+            Text=""
+            Canvas.Top="348"
+            Width="206"
+            HorizontalAlignment="Center"
+            Height="81"
+            VerticalAlignment="Top"
+            FontFamily="Cambria" />
+        <Button
+            x:Name="BTNadd"
+            Content="Add"
+            Canvas.Left="370"
+            Canvas.Top="32"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Width="100"
+            FontSize="14"
+            FontFamily="Cambria" />
+        <Button
+            x:Name="BTNclearbox"
+            Content="Clear Box"
+            Canvas.Left="306"
+            Canvas.Top="397"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Width="176"
+            RenderTransformOrigin="0.557,0.148"
+            FontFamily="Cambria"
+            FontSize="14" />
+        <Button
+            x:Name="BTNaddtolist"
+            Content="Add To List"
+            Canvas.Left="306"
+            Canvas.Top="335"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Width="177"
+            FontFamily="Cambria"
+            FontSize="14"
+            RenderTransformOrigin="0.507,1.337" />
+        <Button
+            x:Name="BTNupdate"
+            Content="Update Selected Item"
+            Canvas.Left="306"
+            Canvas.Top="367"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Width="176"
+            FontSize="14"
+            FontFamily="Cambria" />
+        <ListView
+            x:Name="LVtask"
+            Height="230"
+            Width="497"
+            d:ItemsSource="{d:SampleData ItemCount=8}"
+            Canvas.Left="10"
+            Canvas.Top="61"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            FontFamily="Cambria">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn
+                        Header="Name"
+                        DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn
+                        Header="High Importance"
+                        DisplayMemberBinding="{Binding HighImportance}" />
+                    <GridViewColumn
+                        Header="Time Sensitive"
+                        DisplayMemberBinding="{Binding TimeSensitive}" />
+                    <GridViewColumn
+                        Header="Completed"
+                        DisplayMemberBinding="{Binding Completed}" />
+                    <GridViewColumn
+                        Header="Description"
+                        DisplayMemberBinding="{Binding Description}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <RichTextBox
+            x:Name="RTXTBdisplay"
+            Height="377"
+            Width="214"
+            Canvas.Left="576"
+            Canvas.Top="10"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            FontFamily="Cambria">
+            <FlowDocument>
+                <Paragraph>
+                    <Run
+                        Text="" />
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <RadioButton
+            x:Name="RBTNcompleted"
+            Content="Completed"
+            IsChecked="True"
+            GroupName="Complete?"
+            Canvas.Left="576"
+            Canvas.Top="395"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            FontFamily="Cambria"
+            FontSize="14" />
+        <RadioButton
+            x:Name="RBTNnotcompleted"
+            Content="Not Completed"
+            IsChecked="True"
+            GroupName="Complete?"
+            Canvas.Left="683"
+            Canvas.Top="395"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            FontFamily="Cambria"
+            FontSize="14" />
+        <CheckBox
+            x:Name="CBtimesensitive"
+            Content="Time Sensitive"
+            IsChecked="True"
+            Canvas.Left="405"
+            Canvas.Top="301"
+            FontSize="14"
+            FontFamily="Cambria" />
+        <CheckBox
+            x:Name="CBhighimport"
+            Content="High Importance"
+            IsChecked="True"
+            Canvas.Left="279"
+            Canvas.Top="301"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            RenderTransformOrigin="-0.029,-0.107"
+            FontSize="14"
+            FontFamily="Cambria" />
+
+    </Canvas>
+</Window>
