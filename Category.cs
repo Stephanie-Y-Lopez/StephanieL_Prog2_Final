@@ -31,12 +31,15 @@ namespace StephanieL_Prog2_Final
         public string Name { get => _name; set => _name = value; }
         public List<Item> TodoItemsInCategory { get => _todoItemsInCategory; set => _todoItemsInCategory = value; }
 
-        public override string ToString()
+        public void AddItem(Item item)
         {
-            return Name;
+            _todoItemsInCategory.Add(item);
         }
 
-
+        public override string ToString()
+        {
+            return $"{_name}";
+        }//To show names of categories correctly
 
     }
 }

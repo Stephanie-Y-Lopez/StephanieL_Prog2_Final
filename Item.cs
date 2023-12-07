@@ -35,22 +35,43 @@ namespace StephanieL_Prog2_Final
         public bool Completed { get => _completed; set => _completed = value; }
         public string Description { get => _description; set => _description = value; }
 
+        public void CompletedTask()
+        {
+            Completed = true;
+            Description += "\n***Task Completed***";
+        }        // For RadioButton Complete
 
+        public void highimportanceTask()
+        {
+            HighImportance = !HighImportance;
+
+  
+
+        }       // For Checkbox Time Sensitive
+
+
+        public void timesensitiveTask()
+        {
+           TimeSensitive = true;
+        }       // For CheckBox Time Sensitive
+
+ 
 
         //Method
         public string DisplayInformation()
         {
             string fullInformation = "";
             fullInformation += $"Task Name: {_name}\n";
+            fullInformation += $" \n";
             fullInformation += $"Task Of High Importance: {_highImportance}\n";
+            fullInformation += $" \n";
             fullInformation += $"Task Is Time Sensitive: {_timeSensitive}\n";
+            fullInformation += $" \n";
             fullInformation += $"Task Completion: {_completed}\n";
+            fullInformation += $" \n";
             fullInformation += $"Task Description: {_description}\n";
 
             return fullInformation;
-
-
-
         }
     }
 }

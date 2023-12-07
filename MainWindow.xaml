@@ -90,7 +90,8 @@
             VerticalAlignment="Center"
             Width="100"
             FontSize="14"
-            FontFamily="Cambria" />
+            FontFamily="Cambria"
+            Click="BTNadd_Click" />
         <Button
             x:Name="BTNclearbox"
             Content="Clear Box"
@@ -101,7 +102,8 @@
             Width="176"
             RenderTransformOrigin="0.557,0.148"
             FontFamily="Cambria"
-            FontSize="14" />
+            FontSize="14"
+            Click="BTNclearbox_Click" />
         <Button
             x:Name="BTNaddtolist"
             Content="Add To List"
@@ -112,7 +114,8 @@
             Width="177"
             FontFamily="Cambria"
             FontSize="14"
-            RenderTransformOrigin="0.507,1.337" />
+            RenderTransformOrigin="0.507,1.337"
+            Click="BTNaddtolist_Click" />
         <Button
             x:Name="BTNupdate"
             Content="Update Selected Item"
@@ -122,7 +125,8 @@
             VerticalAlignment="Top"
             Width="176"
             FontSize="14"
-            FontFamily="Cambria"/>                                         
+            FontFamily="Cambria"
+            Click="BTNupdate_Click" />                                         
         <ListView
             x:Name="LVtask"
             Height="230"
@@ -174,7 +178,7 @@
         <RadioButton
             x:Name="RBTNcompleted"
             Content="Completed"
-            IsChecked="True"
+            IsChecked="False"
             GroupName="Complete?"
             Canvas.Left="576"
             Canvas.Top="395"
@@ -185,7 +189,7 @@
         <RadioButton
             x:Name="RBTNnotcompleted"
             Content="Not Completed"
-            IsChecked="false"
+            IsChecked="True"
             GroupName="Complete?"
             Canvas.Left="683"
             Canvas.Top="395"
